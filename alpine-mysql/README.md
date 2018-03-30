@@ -17,7 +17,7 @@ docker-compose build
 docker run -it --name mysql -p 3306:3306 -v $(pwd)/db-data:/data -e MYSQL_DATABASE=admin -e MYSQL_USER=ehlxr -e MYSQL_PASSWORD=prY6KaQC -e MYSQL_ROOT_PASSWORD=eDWyvjS2 ehlxr/alpine-mysql
 ```
 
-> It will create a new db(default is `admin`) whith user `ehlxr` set password is `prY6KaQC`, and set mysql root password(default is `#Q*2.&tY`)
+> It will create a new db(default is `admin`) whith user `ehlxr` set password is `prY6KaQC`, and set mysql root password(default is `eDWyvjS2`)
 
 # Usage (docker-compose)
 ```
