@@ -2,7 +2,7 @@ FROM alpine:latest
 LABEL maintainer="ehlxr.me@gmail.com"
 
 WORKDIR /app
-VOLUME /app
+VOLUME /data
 
 RUN apk add --update --no-cache mysql mysql-client \
     && rm -f /var/cache/apk/*
