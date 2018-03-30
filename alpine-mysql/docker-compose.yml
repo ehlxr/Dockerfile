@@ -1,0 +1,17 @@
+version: '3'
+services:
+  mysql:
+    build:
+      dockerfile: Dockerfile
+      context: .
+    image: ehlxr/alpine-mysql:latest
+    container_name: mysql
+    environment:
+      MYSQL_ROOT_PASSWORD: eDWyvjS2
+      MYSQL_USER: ehlxr
+      MYSQL_PASSWORD: prY6KaQC
+      MYSQL_DATABASE: admin
+    volumes:
+      - ./db-data:/data
+    ports:
+      - "3306:3306"
