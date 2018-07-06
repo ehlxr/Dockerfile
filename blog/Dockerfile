@@ -1,4 +1,4 @@
-FROM ehlxr/hexo:latest
+FROM ehlxr/hexo-base:latest
 # WORKDIR /hexo
 COPY . .
 
