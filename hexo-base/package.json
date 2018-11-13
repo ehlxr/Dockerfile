@@ -3,7 +3,7 @@
   "version": "0.0.0",
   "private": true,
   "hexo": {
-    "version": "3.7.1"
+    "version": "3.8.0"
   },
   "scripts": {
     "prebuild": "hexo clean",
@@ -11,15 +11,19 @@
     "postbuild": "gulp"
   },
   "dependencies": {
-    "gulp": "^3.9.1",
+    "del": "^3.0.0",
+    "gulp": "^4.0.0",
+    "gulp-changed": "^3.2.0",
+    "gulp-clean-css": "^3.10.0",
     "gulp-htmlclean": "^2.7.22",
-    "gulp-htmlmin": "^3.0.0",
-    "gulp-minify-css": "^1.2.4",
-    "gulp-pretty-data": "^0.2.0",
+    "gulp-htmlmin": "^5.0.1",
+    "gulp-if": "^2.0.2",
+    "gulp-imagemin": "^5.0.3",
+    "gulp-plumber": "^1.2.0",
     "gulp-uglify": "^3.0.1",
-    "hexo": "^3.7.1",
+    "hexo": "^3.8.0",
     "hexo-cli": "^1.1.0",
-    "hexo-deployer-git": "^0.2.0",
+    "hexo-deployer-git": "^0.3.1",
     "hexo-filter-optimize": "^0.2.5",
     "hexo-generator-archive": "^0.1.5",
     "hexo-generator-baidu-sitemap": "^0.1.2",
@@ -30,15 +34,19 @@
     "hexo-generator-sitemap": "^1.2.0",
     "hexo-generator-tag": "^0.2.0",
     "hexo-helper-qrcode": "^1.0.2",
-    "hexo-related-popular-posts": "^3.0.1",
+    "hexo-related-popular-posts": "^3.0.3",
     "hexo-renderer-ejs": "^0.3.0",
     "hexo-renderer-marked": "^0.3.0",
     "hexo-renderer-stylus": "^0.3.3",
-    "hexo-server": "^0.2.2",
+    "hexo-server": "^0.3.3",
     "hexo-symbols-count-time": "^0.2.0",
     "hexo-wordcount": "^2.0.1",
-    "npm": "^5.10.0",
+    "npm": "^6.4.1",
+    "run-sequence": "^2.2.1",
     "to": "^0.2.9",
     "update": "^0.7.4"
+  },
+  "devDependencies": {
+    "gulp-debug": "^4.0.0"
   }
 }
