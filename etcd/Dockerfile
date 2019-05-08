@@ -10,13 +10,14 @@ ENV NODE_NAME=node1
 ENV CLUSTER=${NODE_NAME}=http://${IP}:2380
 ENV TOKEN=my-etcd-token
 ENV CLUSTER_STATE=new
+ENV ETCDCTL_API=3
 
 VOLUME [ "${DATA_DIR}" ]
 
 RUN wget ${ETCD_DOWNLOAD_URL}/${ETCD_VER}/etcd-${ETCD_VER}-linux-amd64.tar.gz \
     && tar -xzvf etcd*.tar.gz \
     && mv etcd*/etcd /usr/local/bin/ \
-    # && mv etcd*/etcdctl /usr/local/bin/ \
+    && mv etcd*/etcdctl /usr/local/bin/ \
     && rm -rf etcd* \
     && mkdir -p ${DATA_DIR} \
     # Alpine Linux doesn't use pam, which means that there is no /etc/nsswitch.conf,
@@ -31,4 +32,5 @@ CMD ["sh", "-c", "etcd --data-dir ${DATA_DIR} --name ${NODE_NAME} \
     --initial-advertise-peer-urls http://${IP}:2380 --listen-peer-urls http://${IP}:2380 \
     --advertise-client-urls http://${IP}:2379 --listen-client-urls http://${IP}:2379 \
     --initial-cluster ${CLUSTER} \
-    --initial-cluster-state ${CLUSTER_STATE} --initial-cluster-token ${TOKEN}"]
+    --initial-cluster-state ${CLUSTER_STATE} --initial-cluster-token ${TOKEN} \
+    --auto-compaction-retention=1"]
