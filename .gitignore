@@ -1,1 +1,3 @@
 alpine-mysql/db-data
+etcd/data
+etcd/backup.db

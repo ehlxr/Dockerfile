@@ -1,7 +1,7 @@
 # https://github.com/etcd-io/etcd/blob/master/Documentation/op-guide/container.md#docker
 FROM alpine:latest
 
-ARG ETCD_VER=v3.0.14
+ARG ETCD_VER=v3.3.13
 ARG ETCD_DOWNLOAD_URL=https://github.com/coreos/etcd/releases/download
 
 ENV DATA_DIR=/var/lib/etcd/
@@ -12,7 +12,7 @@ ENV TOKEN=my-etcd-token
 ENV CLUSTER_STATE=new
 ENV ETCDCTL_API=3
 
-VOLUME [ "${DATA_DIR}" ]
+# VOLUME [ "${DATA_DIR}" ]
 
 RUN wget ${ETCD_DOWNLOAD_URL}/${ETCD_VER}/etcd-${ETCD_VER}-linux-amd64.tar.gz \
     && tar -xzvf etcd*.tar.gz \
