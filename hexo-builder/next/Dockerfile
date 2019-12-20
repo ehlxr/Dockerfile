@@ -16,4 +16,5 @@ RUN apk add --update --no-cache --virtual=build-dependencies git yarn \
     && rm -rf /var/cache/apk/* \
     && rm -rf /tmp/* \
     && rm package*.json \
-    && npm cache clean --force
+    # && npm cache clean --force
+    && yarn cache clean
